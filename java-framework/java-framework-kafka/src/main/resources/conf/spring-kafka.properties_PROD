@@ -1,0 +1,2 @@
+kafka_servers=127.0.0.1:9092    
+kafka_default_topic=test_topic

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Spring的约束文件 使用那些模块就标记那些模块的约束文档 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <beans>
+        <!-- 连接池配置 -->
+        <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+            <!--最大连接数 -->
+            <property name="maxTotal" value="#{redisConfig.maxTotal}"/>
+            <!--最大空闲连接数 -->
+            <property name="maxIdle" value="#{redisConfig.maxIdle}"/>
+            <!--每次释放连接的最大数目 -->
+            <property name="numTestsPerEvictionRun" value="#{redisConfig.numTestsPerEvictionRun}"/>
+            <!--释放连接的扫描间隔(单位:毫秒) -->
+            <property name="timeBetweenEvictionRunsMillis" value="#{redisConfig.timeBetweenEvictionRunsMillis}"/>
+            <!--连接最小空闲时间(单位:毫秒) -->
+            <property name="minEvictableIdleTimeMillis" value="#{redisConfig.minEvictableIdleTimeMillis}"/>
+            <!--连接空闲多久后释放,当空闲时间大于该值并且空闲连接大于最大空闲连接时直接释放连接 -->
+            <property name="softMinEvictableIdleTimeMillis" value="#{redisConfig.softMinEvictableIdleTimeMillis}"/>
+            <!--获取连接时最大等待毫秒数,如果该值小于0,则阻塞不确定的时长,默认值-1 -->
+            <property name="maxWaitMillis" value="#{redisConfig.maxWaitMillis}"/>
+            <!--在获取连接时检查连接有效性,默认为false -->
+            <property name="testOnBorrow" value="#{redisConfig.testOnBorrow}"/>
+            <!--在连接空闲时检查连接有效性,默认为false -->
+            <property name="testWhileIdle" value="#{redisConfig.testWhileIdle}"/>
+            <!--连接耗尽是否阻塞,false代表抛异常,true代表阻塞直到超时,默认为true -->
+            <property name="blockWhenExhausted" value="#{redisConfig.blockWhenExhausted}"/>
+        </bean>
+
+
+
+        <!-- jedis 集群 -->
+        <bean id="jedisCluster" class="com.java.redis.cluster.JedisClusterFactory">
+            <property name="addressConfig" ref="redisProperties" />
+            <!-- 属性文件里 key的前缀 -->
+            <property name="addressKeyPrefix" value="#{redisConfig.addressKeyPrefix}"/>
+            <property name="requirePassword"  value="#{redisConfig.requirePassword}"/>
+
+            <!--设置连接超时时间 -->
+            <property name="connectionTimeout" value="#{redisConfig.timeout}"/>
+            <!--设置网络通信超时时间 -->
+            <property name="soTimeout" value="#{redisConfig.soTimeout}"/>
+            <!--设置集群访问密码 -->
+            <property name="password" value="#{redisConfig.password}"/>
+            <!--设置最大重试次数 -->
+            <property name="maxAttempts" value="#{redisConfig.attempts}"/>
+            <!--设置jedisPool配置 -->
+            <property name="genericObjectPoolConfig" ref="jedisPoolConfig"/>
+        </bean>
+
+        <!-- 缓存管理 -->
+        <bean id="sessionCache" class="com.java.redis.cache.impl.SessionCacheImpl">
+            <property name="jedisCluster" ref="jedisCluster"/>
+        </bean>
+        <!-- cache管理器 -->
+        <bean id="cacheManager" class="com.java.redis.cache.CacheManager">
+            <property name="sessionCache" ref="sessionCache"/>
+        </bean>
+
+    </beans>
+
+
+</beans>

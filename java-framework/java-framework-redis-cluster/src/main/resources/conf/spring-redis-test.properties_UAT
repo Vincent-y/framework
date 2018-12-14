@@ -1,0 +1,20 @@
+#########redis conect config###########
+maxTotal=1000
+maxIdle=100
+numTestsPerEvictionRun=1024
+timeBetweenEvictionRunsMillis=30000
+minEvictableIdleTimeMillis=100000
+softMinEvictableIdleTimeMillis=10000
+maxWaitMillis=1500
+testOnBorrow=false
+testWhileIdle=true
+blockWhenExhausted=false
+
+addressKeyPrefix=address
+requirePassword=false
+timeout=10000
+soTimeout=10000
+password=qwerASDF!@#$
+attempts=5
+
+

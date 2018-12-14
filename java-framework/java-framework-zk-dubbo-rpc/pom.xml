@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>java-framework</artifactId>
+        <groupId>com.java.framework</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <name>${project.artifactId}  [${project.version}]</name>
+    <artifactId>java-framework-zk-dubbo-rpc</artifactId>
+    <description>java-framework-zk-dubbo-rpc</description>
+
+    <dependencies>
+
+        <!-- dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>validation-api</artifactId>
+                    <groupId>javax.validation</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/com.caucho/hessian -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.51</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-api -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-api</artifactId>
+            <version>2.7.18</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.xmemcached/xmemcached -->
+        <dependency>
+            <groupId>com.googlecode.xmemcached</groupId>
+            <artifactId>xmemcached</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+
+</project>

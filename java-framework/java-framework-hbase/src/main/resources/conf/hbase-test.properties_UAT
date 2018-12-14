@@ -1,0 +1,3 @@
+zookeeperHost=hadoop-master:2181,hadoop-slave1:2181,hadoop-slave2:2181
+poolSize=10
+

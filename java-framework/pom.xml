@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.java.framework</groupId>
+        <artifactId>java-framework-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>java-framework</artifactId>
+
+    <packaging>pom</packaging>
+    <description>java-framework</description>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-logs</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-test</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-activiti</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-aop</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-boot</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-fastdfs</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-redis-cluster</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-kafka</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-model</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-rabbit-mq</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-redis</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-db-template</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-db-helper</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-utils</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-zk-dubbo</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-zk-dubbo-rpc</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-zk</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-hbase</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-hdfs</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-rocketmq</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-language-utils</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.java.framework</groupId>
+                <artifactId>java-framework-um-push</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <modules>
+        <module>java-framework-logs</module>
+        <module>java-framework-test</module>
+        <module>java-framework-activiti</module>
+        <module>java-framework-aop</module>
+        <module>java-framework-boot</module>
+        <module>java-framework-fastdfs</module>
+        <module>java-framework-redis-cluster</module>
+        <module>java-framework-kafka</module>
+        <module>java-framework-model</module>
+        <module>java-framework-rabbit-mq</module>
+        <module>java-framework-redis</module>
+        <module>java-framework-db-template</module>
+        <module>java-framework-utils</module>
+        <module>java-framework-zk-dubbo</module>
+        <module>java-framework-zk-dubbo-rpc</module>
+        <module>java-framework-db-helper</module>
+        <module>java-framework-zk</module>
+        <module>java-framework-hbase</module>
+        <module>java-framework-hdfs</module>
+        <module>java-framework-rocketmq</module>
+        <module>java-framework-language-utils</module>
+        <module>java-framework-um-push</module>
+    </modules>
+    
+</project>
